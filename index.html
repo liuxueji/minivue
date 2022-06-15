@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  <div id="app">
+    {{message}}
+    <h1>{{name}}</h1>
+    <h2>{{age}}</h2>
+    <button @click='handle'>点击触发</button>
+    <input v-model="message">
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        message: 'helloWorld',
+        name: '张三',
+        age: '20'
+      },
+      // beforeMount() {
+      //   console.log('beforeMount', this.$data, this.$el);
+      // },
+      // created() {
+      //   console.log('created', this.$data, this.$el);
+      // },
+      // beforeCreate() {
+      //   console.log('beforeCreate', this.$data, this.$el);
+      // },
+      mounted() {
+        console.log(this);
+      },
+      methods: {
+        handle(e) {
+          this.message = 'hellow'
+          console.log(this)          
+        }
+      },
+    })
+  </script>
+</body>
+
+</html>
